@@ -6,6 +6,9 @@ var faker = require("faker");
 var middleware_1 = require("./middleware");
 var formatters_1 = require("./formatters");
 var utils_1 = require("./utils");
+jsf.option({
+    failOnInvalidFormat: false
+});
 jsf.extend('faker', function () { return faker; });
 // if this is set, it will override all other middleware config values. true will enable all, false will disable all
 var DEFAULT_CONFIG_FORMATTER = { default: true };

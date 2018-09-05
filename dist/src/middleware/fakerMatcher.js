@@ -80,7 +80,7 @@ var mappedFakerValues = getFakerValues();
  */
 var addFakerToDefinition = function (definition) {
     if (!Object.keys(definition.properties).length) {
-        throw new Error('The JSON schema passed does not have any properties, cannot inject faker values');
+        return null;
     }
     // Now we will attempt to guess the closest faker match
     var propertiesCopy = Object.assign({}, definition.properties);

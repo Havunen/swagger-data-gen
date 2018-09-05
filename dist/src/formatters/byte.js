@@ -13,5 +13,5 @@ function byte(gen) {
     var base64Encoded = buff.toString('base64');
     return base64Encoded;
 }
-exports.byteFormatter = { formatName: 'byte', callback: byte };
+exports.byteFormatter = { formatName: 'byte-base64', callback: byte };
 //# sourceMappingURL=byte.js.map

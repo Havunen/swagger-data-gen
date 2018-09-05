@@ -1,14 +1,15 @@
 import * as SwaggerParser from 'swagger-parser';
 import * as jsf from 'json-schema-faker';
 import * as faker from 'faker';
-import * as formatters from './formatters';
-import * as middleware from './middleware';
 import { requireProps, fakerDate, fakerMatcher } from './middleware';
 import { binary, byte, fullDate, password } from './formatters';
 import { configure, generateData } from './utils';
 import { Formatter, Middleware, BuildOptions } from './types';
 import { Spec as Swagger } from 'swagger-schema-official';
 
+jsf.option({
+  failOnInvalidFormat: false
+});
 jsf.extend('faker', () => faker);
 
   // if this is set, it will override all other middleware config values. true will enable all, false will disable all

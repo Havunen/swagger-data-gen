@@ -15,4 +15,4 @@ function byte(gen: any): string {
   return base64Encoded;
 }
 
-export const byteFormatter: Formatter = { formatName: 'byte', callback: byte };
+export const byteFormatter: Formatter = { formatName: 'byte-base64', callback: byte };
