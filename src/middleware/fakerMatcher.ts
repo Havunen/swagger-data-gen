@@ -97,7 +97,7 @@ const addFakerToDefinition = (definition: any) => {
   // Now we will attempt to guess the closest faker match
   const propertiesCopy = Object.assign({}, definition.properties);
   const propsWithFaker = Object.keys(propertiesCopy)
-    .filter(k => !propertiesCopy[k]['$ref'])
+    .filter(k => !propertiesCopy[k]['$ref'] && !(propertiesCopy[k].items && propertiesCopy[k].items['$ref']))
     .map(k => findClosestMatch(k, mappedFakerValues))
     .filter(match => match.cost < COST_CAP )
     .map(({ prop, match }) => (

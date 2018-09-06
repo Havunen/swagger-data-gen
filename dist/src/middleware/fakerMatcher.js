@@ -85,7 +85,7 @@ var addFakerToDefinition = function (definition) {
     // Now we will attempt to guess the closest faker match
     var propertiesCopy = Object.assign({}, definition.properties);
     var propsWithFaker = Object.keys(propertiesCopy)
-        .filter(function (k) { return !propertiesCopy[k]['$ref']; })
+        .filter(function (k) { return !propertiesCopy[k]['$ref'] && !(propertiesCopy[k].items && propertiesCopy[k].items['$ref']); })
         .map(function (k) { return findClosestMatch(k, mappedFakerValues); })
         .filter(function (match) { return match.cost < COST_CAP; })
         .map(function (_a) {
